@@ -48,9 +48,6 @@ typedef enum {
 // sensor state, updated asynchronously by undefined comms interface.
 static volatile SensorMode_t sensor_mode = SENSOR_MODE_ANALOGUE; // default to analogue
 
-// raw_reading. Updated in Sensor_SetMode()
-static volatile float raw_reading = 0;  // updated async by the sensor
-
 /*** PRIVATE ***/
 
 /**
@@ -122,8 +119,6 @@ void Sensor_SetMode(SensorMode_t new_mode) {
         sensor_mode = new_mode;
     }
 }
-
-
 
 /**
  * @brief  Validates raw sensor data against active physical bounds

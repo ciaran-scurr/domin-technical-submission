@@ -3,7 +3,7 @@
 / * =========================================================================
  * ASSUMPTIONS
  * =========================================================================
- * 1. Assumes a 32-bit architecture mcu where a single write to a 32-bit variable
+ * 1. Assumes a 32-bit architecture mcu where a single r/w to a 32-bit variable
  * takes a single clock cycle.(Important for atomic reading of volatile vars)
  *
  * 2. Assumes the 5V and 12V are routed back to a shared ADC pin.
@@ -12,6 +12,8 @@
  *
  * 4. Assumes that 'Sensor_SetPowerMode' and 'Sensor_VerifyVoltage' are 
  * called asynchronously by an upper-layer scheduler. 
+ *
+ * 5. Assumes a HAL providing access to write_gpio, read_adc style functions. 
  *
  * NOTE: any functions with a Sensor_ prefix would be in the header and public. 
  * ========================================================================= */
